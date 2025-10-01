@@ -8,15 +8,15 @@
 
 num = input("Please enter then number of terms: ")
 
-if not int(num) <= 0 or num_isdigit():
+if not num.isdigit() or int(num) <= 0:
   print("Please enter a positive integer.")
 else:
   num = int(num)
   a, b = 0, 1
 
-print(f"Fibonacci sequence up to {num} terms:")
+  print(f"Fibonacci sequence up to {num} terms:")
 
-for i in range(num):
-  print(a, end="")
-  a, b = b, a + b
-print()
+  for i in range(num):
+    print(a, end=" ")
+    a, b = b, a + b
+  print()
