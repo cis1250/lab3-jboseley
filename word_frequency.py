@@ -39,12 +39,19 @@ while (is_sentence(user_sentence) == False):
 # Splits into substrings where it finds whitespace.
 words = user_sentence.split()
 
+#Make lowercase and remove puncation.
+updated_words = []
+for w in words:
+    w = w.lower()           
+    w = w.strip(".,!?")     
+    updated_words.append(w)
+
 # Creates two lists.
 unique_words = []
 frequencies = []
 
 # Loop goes through every word.
-for word in words:
+for word in updated_words:
     # Checks to see if the word exists in the list already, if known it increases the count.
     if word in unique_words:
         index = unique_words.index(word)
@@ -56,4 +63,4 @@ for word in words:
 
 print("\nWord Frequencies:")
 for i in range(len(unique_words)):
-    print(unique_words[i], ":", frequencies[i])
+    print(unique_words[i], ":", frequencies[i]) 
