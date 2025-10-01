@@ -31,19 +31,25 @@ def is_sentence(text):
 
 user_sentence = input("Enter a sentence: ")
 
+# While not a sentence, loop until a correct sentence is entered.
 while (is_sentence(user_sentence) == False):
     print("This does not meet the criteria for a sentence.")
     user_sentence = input("Enter a sentence: ")
 
+# Splits into substrings where it finds whitespace.
 words = user_sentence.split()
 
+# Creates two lists.
 unique_words = []
 frequencies = []
 
+# Loop goes through every word.
 for word in words:
+    # Checks to see if the word exists in the list already, if known it increases the count.
     if word in unique_words:
         index = unique_words.index(word)
         frequencies[index] += 1
+    # If the word is new it adds it to the list.
     else:
         unique_words.append(word)
         frequencies.append(1)
